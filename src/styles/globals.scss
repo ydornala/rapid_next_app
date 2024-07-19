@@ -1,0 +1,645 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+// RAPID 2.0 header scss
+.nav-wrapper {
+  position: relative;
+}
+.section__navigation {
+  border-bottom: 1px solid #ccc;
+
+  nav {
+    &.navbar {
+      .navbar-brand {
+        margin-right: 15px;
+        width: 200px;
+        img {
+          max-width: 200px;
+          height: 60px;
+          @media (min-width: 768px) and (max-width: 992px) {
+            object-fit: fill;
+          }
+        }
+      }
+
+      & .show {
+        .navbar-nav {
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}
+
+.help-feedback-icons {
+  .material-icons {
+    font-size: 30px !important;
+  }
+}
+
+.xl-main-navigation {
+  .my-garage-btn-wrapper {
+    background: linear-gradient(180deg, #fefefe 0%, #c2c2c2 100%);
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px 0;
+    // @media (min-width: 1200px) and (max-width: 1600px) {
+    //   margin-right: 86px;
+    // }
+
+    span {
+      display: block;
+    }
+
+    .my-garage-btn-img-wrapper {
+      img {
+        filter: brightness(0) invert(0);
+      }
+    }
+
+    .my-garage-btn-text {
+      padding-left: 10px;
+      width: 190px;
+
+      span {
+        text-transform: uppercase;
+        color: #111;
+        font-size: 13px;
+
+        &:first-child {
+          font-size: 19px;
+          position: relative;
+        }
+      }
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      margin-right: 0;
+      padding-right: 1.1rem;
+      //white-space: nowrap;
+    }
+
+    .chemical-and-supplies-Padding,
+    .part-interchange-Padding,
+    .stock-check-Padding {
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+    }
+
+    &.pseudo-nav {
+      align-items: center;
+
+      .my-cart-btn {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        @media (min-width: 992px) and (max-width: 1200px) {
+          position: initial !important;
+        }
+        .my-cart-btn-wrapper {
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          // padding: 0px 10px;
+
+          white-space: nowrap;
+
+          .my-cart-btn-img-wrapper {
+            // text-align: center;
+            // margin-top: 20px;
+            // position: relative;
+
+            // span {
+            // 	position: absolute;
+            // 	top: -19px;
+            // 	right: -5px;
+            // 	width: 37px;
+            // 	height: 32px;
+            // 	display: flex;
+            // 	align-items: center;
+            // 	justify-content: center;
+            // 	background: #a02125;
+            // 	border: 1px solid #ffffff;
+            // 	color: #fff;
+            // 	border-radius: 100%;
+            // 	font-size: 14px;
+            // 	line-height: 18px;
+            // 	z-index: 2;
+
+            // 	@media (max-width: 1200px) {
+            // 		top: -15px;
+            // 		right: -12px;
+            // 	}
+            // }
+
+            img {
+              filter: brightness(0) invert(0);
+            }
+          }
+        }
+
+        @media (max-width: 1200px) {
+          position: absolute;
+          top: 15px;
+          right: 0;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        margin-left: 0 !important;
+      }
+    }
+
+    // @media(max-width: 1290px) { padding-top: 20px }
+  }
+
+  .my-cart-btn-text {
+    // padding: 0px 10px !important;
+    // min-width: 100px;
+
+    &.hide-amount {
+      display: none;
+    }
+
+    span {
+      color: #111 !important;
+      font-size: 13px;
+      font-weight: 500;
+
+      &:first-child {
+        font-size: 19px;
+      }
+    }
+  }
+
+  // .admin-dropdown {
+  //   @media(max-width: 1200px) {
+  //     top: 19px !important;
+  //     right: 310px !important;
+  //   }
+  // }
+
+  .dropdown {
+    margin-left: 10px;
+
+    &.dropdown {
+      .dropdown-toggle {
+        cursor: pointer;
+        margin-right: 0px;
+
+        img {
+          filter: brightness(0) invert(0);
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      left: auto;
+
+      // right: 0;
+      .dropdown-item {
+        margin: 0px;
+        padding: 7px;
+      }
+    }
+  }
+}
+
+.fixed-nav-wrapper {
+  min-height: calc(62px + 61px);
+}
+
+.user-name-ship_detail {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  div {
+    span {
+      width: 205px;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 15px;
+      line-height: 16px;
+
+      &:last-of-type {
+        @media (max-width: 1290px) {
+          display: none;
+        }
+      }
+
+      &:first-of-type {
+        @media (max-width: 1290px) {
+          width: 100px;
+        }
+
+        @media (max-width: 990px) {
+          width: auto;
+        }
+      }
+
+      @media (max-width: 1290px) {
+        width: auto;
+      }
+    }
+  }
+}
+
+.hide-icon,
+.show-icon {
+  cursor: pointer;
+}
+
+.show-icon {
+  width: 20px;
+}
+
+body {
+  .right-fixed-buttons {
+    position: sticky;
+    top: 495px;
+    right: 0px;
+    z-index: 99999;
+
+    > div {
+      position: absolute;
+      right: 10px;
+      z-index: 99999;
+
+      input {
+        cursor: pointer;
+        display: block;
+        margin-left: auto;
+
+        + input {
+          margin-top: 60px;
+        }
+      }
+    }
+
+    .fluids-filters-icon {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      outline: none !important;
+    }
+
+    .vehicle-maint-icon {
+      outline: none !important;
+    }
+  }
+
+  #lhc_status_widget_v2 {
+    inset: auto -15px -22px auto !important;
+    right: -6px;
+    bottom: 5px;
+  }
+
+  #lhc_status_container {
+    #status-icon {
+      padding: 3px !important;
+    }
+  }
+}
+
+input[type="image"]:disabled {
+  opacity: 0.5;
+}
+
+.mobie_show_shipTo_number {
+  display: none;
+  font-size: 12px;
+
+  @media (max-width: 1290px) {
+    display: block;
+  }
+}
+
+.user-dropdown {
+  @media (max-width: 1200px) {
+    margin-right: 10px;
+    // position: absolute;
+    // top: 15px;
+    // right: 130px;
+  }
+
+  @media (max-width: 991px) {
+    position: static;
+    width: 100%;
+    margin: 10px 0 0;
+  }
+}
+
+.admin-dropdown {
+  padding: 8px;
+
+  @media (max-width: 991px) {
+    padding-left: 0;
+  }
+}
+
+.xl-main-navigation .navbar-nav.pseudo-nav .my-cart-btn {
+  @media (max-width: 991px) {
+    position: static;
+    margin: 10px 0 0;
+
+    & .my-cart-btn-wrapper {
+      padding-left: 0;
+    }
+  }
+}
+
+.my-garage-btn {
+  position: relative;
+
+  & i {
+    position: absolute;
+    top: 13px;
+    right: 10px;
+  }
+}
+
+.loggedIn-header {
+  @media (min-width: 992px) and (max-width: 1200px) {
+    flex-direction: row !important;
+  }
+  @media (max-width: 1200px) {
+    padding: 10px 0;
+    justify-content: end;
+  }
+}
+
+.scroll_to_top {
+  position: fixed;
+  inset: auto 5px 10px auto;
+  cursor: pointer;
+  float: right;
+  margin-right: 75px;
+  font-size: 3em;
+  z-index: 99999;
+  right: 5px;
+  bottom: 10px;
+}
+
+.feedback_icon {
+  cursor: pointer;
+
+  &:hover {
+    color: #a02125;
+  }
+}
+
+.feedBackModal {
+  .modal-dialog {
+    right: 2%;
+    position: absolute;
+    top: 35px;
+    margin: 0;
+    width: 350px;
+  }
+}
+
+.modal-header {
+  .feedBack-heading {
+    font-size: 1.5rem;
+  }
+}
+
+.comment_subheading {
+  font-size: 15px;
+  color: #000;
+}
+
+.comment_text {
+  margin: 5px 1px 1px 0px;
+  text-align: right;
+}
+
+.feedback_upload_file {
+  padding-top: 20px;
+
+  span {
+    color: #212121;
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+}
+
+.react-toast-notifications__container {
+  top: 144px !important;
+}
+
+.user-name-driver-mgnt-detail {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 20px;
+
+  div {
+    span {
+      width: 80px;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 15px;
+      line-height: 16px;
+
+      &:last-of-type {
+        @media (max-width: 1290px) {
+          display: none;
+        }
+      }
+
+      &:first-of-type {
+        @media (max-width: 1290px) {
+          width: 100px;
+        }
+
+        @media (max-width: 990px) {
+          width: auto;
+        }
+      }
+
+      @media (max-width: 1290px) {
+        width: auto;
+      }
+    }
+  }
+}
+
+.centeralign {
+  text-align: center;
+  align-items: flex-start !important;
+}
+
+.show-dp-icon {
+  width: 30px;
+}
+
+.xl-main-navigation {
+  .top-header-nav {
+    // column-gap: 20px;
+    display: flex;
+    gap: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .xl-main-navigation.loggedIn-header.help-feedback-icons.navbar-collapse.collapse {
+    display: flex !important;
+    flex-basis: auto !important;
+  }
+
+  .ml-auto.pseudo-nav.top-header-nav.navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    // margin-left: auto !important;
+    margin-right: 0;
+    padding-right: 0px;
+  }
+
+  .my-cart-btn nav-item {
+    margin: 0px !important;
+  }
+
+  .section__chat_helperMenu {
+    .dropdown.user-dropdown.dropdown {
+      margin-top: 0px !important;
+    }
+  }
+
+  .xl-main-navigation .navbar-nav.pseudo-nav .my-cart-btn {
+    margin-top: 0px !important;
+    position: revert;
+  }
+  // .my-cart-btn-wrapper {
+  //   // margin-left: 15px;
+  // }
+}
+
+/*tab view*/
+.section__navigation {
+  .navbar-expand-lg {
+    @media (min-width: 768px) and (max-width: 992px) {
+      width: 715px;
+    }
+  }
+}
+
+/* header layout style nov23 changed*/
+.bottom-header {
+  border-bottom: 1px solid #ccc;
+}
+
+// @media screen and (max-width: 768px){
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .mygarage {
+    margin-left: 13px !important;
+    min-width: 80% !important;
+    margin-top: 6px !important;
+    // z-index: 9999 !important;
+    transform: translate(90px, 173px) !important;
+  }
+
+  .bottom-header {
+    padding-top: 10px;
+    background: white;
+    border-bottom: none;
+  }
+
+  .production_msg_margin {
+    display: none;
+  }
+
+  .xl-main-navigation {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+
+    .my-garage-btn-wrapper {
+      width: 250px;
+      margin-bottom: 10px;
+    }
+
+    background: white;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+  }
+
+  .navbar-brand img {
+    max-width: 170px !important;
+  }
+
+  .sectionHeader {
+    margin-left: 235px !important;
+  }
+}
+
+.navbar-brand img {
+  max-width: 150px;
+}
+
+.sectionHeader {
+  margin-left: 235px !important;
+}
+
+.navbar-brand img {
+  max-width: 200px;
+}
+
+.xlp-header {
+  // position: fixed;
+  min-height: 122px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  z-index: 998;
+}
+
+.garage-section {
+  display: flex;
+  align-items: center;
+}
+
+// #basic-menu {
+//   .MuiPaper-root {
+//     top: 40px !important;
+//   }
+// }
